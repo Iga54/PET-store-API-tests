@@ -2,7 +2,7 @@ const { faker } = require('@faker-js/faker');
 const { expect, request } = require('../../config');
 
 describe('Creating a unique pet', function () {
-  it.only('should create a pet and return status code 200', async function () {
+  it('should create a pet and return status code 200', async function () {
     // Arrange:
     const expectedStatusCode = 200;
     const uniqueId = new Date().getTime();
@@ -15,7 +15,7 @@ describe('Creating a unique pet', function () {
       },
       name,
       photoUrls: [
-        'https://www.akc.org/wp-content/uploads/2017/11/Collie-standing-in-a-field.jpg',
+        'https://dogtime.com/wp-content/uploads/sites/12/2023/08/GettyImages-865592368-e1692904739165.jpg',
       ],
       tags: [
         {
