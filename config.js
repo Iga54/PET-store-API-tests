@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const baseURL = 'https://swapi.dev';
+const baseURL = 'https://petstore.swagger.io/';
 const request = require('supertest')(baseURL);
 
 module.exports = {
