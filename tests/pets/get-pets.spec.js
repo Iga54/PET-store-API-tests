@@ -1,4 +1,5 @@
 const { expect, request } = require('../../config');
+const { petIds } = require('../../test-data/input.data');
 
 describe('GET/pets', function () {
   it('should return status code 200 and more than 30 pets with all statuses', async function () {
@@ -22,7 +23,7 @@ describe('GET/pets', function () {
   it('should return a pet with given id', async function () {
     // Arrange:
     const expectedStatusCode = 200;
-    const expectedPetId = 22;
+    const expectedPetId = petIds.toGet;
     // Act:
     const response = await request.get(`v2/pet/${expectedPetId}`);
     // Assert:
