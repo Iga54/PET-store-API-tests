@@ -36,7 +36,7 @@ describe('Deleting created pet', function () {
     );
   });
 
-  it('should delete created pet and return status code 200', async function () {
+  it('should delete created pet and return status code 404 after deleting a pet', async function () {
     // Arrange:
     const expectedStatusCode = 200;
     // Act:
