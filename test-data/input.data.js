@@ -1,8 +1,7 @@
 const petIds = {
-  toGet: 1719327904428,
+  toGetPet: 2,
   toGetOrder: 9,
-  toPut: 1719322447757,
-  toDelete: 3,
+  toPut: 4,
 };
 
 module.exports = {
