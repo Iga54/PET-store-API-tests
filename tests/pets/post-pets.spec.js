@@ -1,8 +1,8 @@
 const { faker } = require('@faker-js/faker');
 const { expect, request } = require('../../config');
 
-describe('Creating a unique pet', function () {
-  it('should create a pet and return status code 200', async function () {
+describe('Adding a new pet to the store', function () {
+  it('should add a new pet to the store and return status code 200', async function () {
     // Arrange:
     const expectedStatusCode = 200;
     const uniqueId = new Date().getTime();

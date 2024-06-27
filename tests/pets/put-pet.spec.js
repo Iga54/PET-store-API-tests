@@ -2,8 +2,8 @@ const { faker } = require('@faker-js/faker');
 const { expect, request } = require('../../config');
 const { petIds } = require('../../test-data/input.data');
 
-describe('updating pets - PUT', function () {
-  it('should update existing pet and return status code 200', async function () {
+describe('PUT - updating a pet', function () {
+  it('should update a pet and return status code 200', async function () {
     // Arrange:
     const petId = petIds.toPut;
     const name = faker.lorem.word(4);
