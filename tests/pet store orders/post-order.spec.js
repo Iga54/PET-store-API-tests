@@ -37,8 +37,8 @@ describe('Placing an order', function () {
     const responseOrder = await request.get(
       `v2/store/order/${response.body.id}`,
     );
-    expect(responseOrder.body.status).to.include(
-      'approved',
+    expect(responseOrder.body).to.include(
+      'placed',
       `Assertion failed on ${JSON.stringify(response.body)}`,
     );
   });

@@ -20,6 +20,7 @@ describe('updating pets - PUT', function () {
     expect(response.statusCode).to.be.equal(expectedStatusCode);
     payload.id = response.body.id;
     const responsePet = await request.get(`v2/pet/${petId}`);
-    expect(responsePet.body.name).to.be.deep.equal(payload.name);
+    expect(responsePet.body.name).to.be.deep.equal(payload.name,
+      `Assertion failed on ${JSON.stringify(response.body)}`);
   });
 });

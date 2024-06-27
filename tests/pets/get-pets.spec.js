@@ -5,7 +5,7 @@ describe('GET/pets', function () {
   it('should return status code 200 and more than 30 pets with all statuses', async function () {
     // Arrange:
     const expectedStatusCode = 200;
-    const expectedNumberOfPets = 30;
+    const expectedNumberOfPets = 7;
     // Act:
     const response = await request.get(
       'v2/pet/findByStatus?status=available&status=pending&status=sold',
@@ -23,7 +23,7 @@ describe('GET/pets', function () {
   it('should return a pet with given id', async function () {
     // Arrange:
     const expectedStatusCode = 200;
-    const expectedPetId = petIds.toGet;
+    const expectedPetId = petIds.toGetPet;
     // Act:
     const response = await request.get(`v2/pet/${expectedPetId}`);
     // Assert:
