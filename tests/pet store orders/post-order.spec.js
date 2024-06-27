@@ -26,6 +26,7 @@ describe('Placing an order', function () {
       petId,
       quantity: 1,
       shipDate: '2024-06-26T13:12:46.914Z',
+      status: 'placed',
     };
     // Act:
     const response = await request.post('v2/store/order').send(payload);
@@ -37,7 +38,7 @@ describe('Placing an order', function () {
     const responseOrder = await request.get(
       `v2/store/order/${response.body.id}`,
     );
-    expect(responseOrder.body).to.include(
+    expect(responseOrder.body.status).to.include(
       'placed',
       `Assertion failed on ${JSON.stringify(response.body)}`,
     );
