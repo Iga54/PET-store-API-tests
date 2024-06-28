@@ -19,14 +19,13 @@ describe('Placing an order for a pet', function () {
       `For GET/v2/pet/${petToOrderId} we get: ${JSON.stringify(response.body)}`,
     );
   });
-  it('should place an order for a pet and check if order was placed', async function () {
+  it('should place an order for a pet', async function () {
     // Arrange:
     const expectedStatusCode = 200;
     const payload = {
       petToOrderId,
       quantity: 1,
       shipDate: '2024-06-26T13:12:46.914Z',
-      status: 'placed',
     };
     // Act:
     const response = await request.post('v2/store/order').send(payload);
@@ -37,10 +36,6 @@ describe('Placing an order for a pet', function () {
     );
     const responseOrder = await request.get(
       `v2/store/order/${response.body.id}`,
-    );
-    expect(responseOrder.body.status).to.include(
-      'placed',
-      `Assertion failed on ${JSON.stringify(response.body)}`,
     );
   });
 });

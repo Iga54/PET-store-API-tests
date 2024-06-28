@@ -3,7 +3,7 @@ const { petIds } = require('../../test-data/input.data');
 
 describe('Deleting an order for a pet', function () {
   let orderId;
-  it.only('should create a pet order', async function () {
+  it('should create a pet order', async function () {
     // Arrange:
     const expectedStatusCode = 200;
     const petToOrderId = petIds.toGetOrder;
@@ -28,7 +28,7 @@ describe('Deleting an order for a pet', function () {
       `For POST/v2/store/order we get: ${JSON.stringify(response.body)}`,
     );
   });
-  it.only('should delete a pet order', async function () {
+  it('should delete a pet order', async function () {
     // Arrange:
     const expectedStatusCode = 200;
     // Act:
