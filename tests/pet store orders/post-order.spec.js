@@ -1,29 +1,29 @@
 const { request, expect } = require('../../config');
 const { petIds } = require('../../test-data/input.data');
 
-describe('Placing an order', function () {
+describe('Placing an order for a pet', function () {
+  let petToOrderId;
   it('should verify the availability of pet before placing an order', async function () {
     // Arrange:
     const expectedStatusCode = 200;
-    const orderId = petIds.toGetOrder;
+    petToOrderId = petIds.toGetOrder;
     // Act:
-    const response = await request.get(`v2/pet/${orderId}`);
+    const response = await request.get(`v2/pet/${petToOrderId}`);
     // Assert:
     expect(response.statusCode).to.be.equal(
       expectedStatusCode,
-      `For GET/v2/pet/${orderId} we expect status code ${expectedStatusCode}`,
+      `For GET/v2/pet/${petToOrderId} we expect status code ${expectedStatusCode}`,
     );
     expect(response.body.status).to.include(
       'available',
-      `For GET/v2/pet/${orderId} we get: ${JSON.stringify(response.body)}`,
+      `For GET/v2/pet/${petToOrderId} we get: ${JSON.stringify(response.body)}`,
     );
   });
   it('should place an order for a pet and check if order was placed', async function () {
     // Arrange:
     const expectedStatusCode = 200;
-    const petId = petIds.toGetOrder;
     const payload = {
-      petId,
+      petToOrderId,
       quantity: 1,
       shipDate: '2024-06-26T13:12:46.914Z',
       status: 'placed',

@@ -1,7 +1,7 @@
 const { expect, request } = require('../../config');
 const { petIds } = require('../../test-data/input.data');
 
-describe('GET/pets', function () {
+describe('GET/v2/pet', function () {
   it('should return status code 200 and more than 7 pets with all statuses', async function () {
     // Arrange:
     const expectedStatusCode = 200;
@@ -13,11 +13,11 @@ describe('GET/pets', function () {
     // Assert:
     expect(response.statusCode).to.be.equal(
       expectedStatusCode,
-      `For GET/pets we expect status code ${expectedStatusCode}`,
+      `For GET/v2/pet we expect status code ${expectedStatusCode}`,
     );
     expect(response.body.length).to.be.greaterThanOrEqual(
       expectedNumberOfPets,
-      `For GET/pets we expect more than ${expectedStatusCode} pets with all statuses`,
+      `For GET/v2/pet we expect more than ${expectedStatusCode} pets with all statuses`,
     );
   });
   it('should return a pet with given id', async function () {
