@@ -50,7 +50,7 @@ describe('Deleting created pet', function () {
 
     expect(responseAfterDelete.statusCode).to.be.equal(
       404,
-      `Assertion failed on ${responseAfterDelete.body}`,
+      `Assertion failed on ${JSON.stringify(response.body)}`,
     );
   });
 });

@@ -17,7 +17,7 @@ describe('GET/v2/pet', function () {
     );
     expect(response.body.length).to.be.greaterThanOrEqual(
       expectedNumberOfPets,
-      `For GET/v2/pet we expect more than ${expectedStatusCode} pets with all statuses`,
+      `For GET/v2/pet we expect more than ${expectedNumberOfPets} pets with all statuses`,
     );
   });
   it('should return a pet with given id', async function () {

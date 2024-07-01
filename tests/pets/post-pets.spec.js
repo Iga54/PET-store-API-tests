@@ -36,7 +36,7 @@ describe('Adding a new pet to the store', function () {
     payload.id = response.body.id;
     expect(responsePet.body).to.be.deep.equal(
       payload,
-      `Assertion failed on ${responsePet.body}`,
+      `Assertion failed on ${JSON.stringify(response.body)}`,
     );  
   });
 });
