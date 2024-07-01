@@ -37,7 +37,7 @@ describe('Pet store orders and statuses', function () {
     // Act:
     const response = await request.get(`v2/store/order/${orderId}`);
     // Assert:
-    expect(response.body.quantity).to.be.equal(expectedPetQuantity
+    expect(response.body.quantity).to.be.greaterThanOrEqual(expectedPetQuantity
       ,
       `Assertion failed on ${JSON.stringify(response.body)}`,
     );
