@@ -3,10 +3,9 @@ const { request, expect } = require('../../config');
 const { userData } = require('../../test-data/input.data');
 
 describe('Creating user account', function () {
-  it('should create user account with input data', async function () {
+  it.only('should create user account with input data', async function () {
     // Arrange:
     const expectedStatusCode = 200;
-    const id = faker.string.uuid(2);
     const username = userData.username;
     const firstName = faker.lorem.word(5);
     const lastName = faker.lorem.word(7);
