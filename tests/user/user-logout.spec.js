@@ -1,8 +1,8 @@
 const { expect, request } = require('../../config');
-const { petIds, userData } = require('../../test-data/input.data');
+const { userData } = require('../../test-data/input.data');
 
 describe('GET/logout', function () {
-  it.only('should log out a user of store', async function () {
+  it('should log out a user of store', async function () {
     // Arrange:
     const expectedStatusCode = 200;
     // Act:

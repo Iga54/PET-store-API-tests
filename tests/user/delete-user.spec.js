@@ -2,12 +2,13 @@ const { faker } = require('@faker-js/faker');
 const { request, expect } = require('../../config');
 const { userData } = require('../../test-data/input.data');
 
-describe('Creating user account', function () {
-  it('should create user account with input data', async function () {
+describe('Deleting created user account', function () {
+  let username;
+  it.only('should create user account', async function () {
     // Arrange:
     const expectedStatusCode = 200;
     const id = faker.string.uuid(2);
-    const username = userData.username;
+    username = faker.lorem.word(4);
     const firstName = faker.lorem.word(5);
     const lastName = faker.lorem.word(7);
     const email = faker.internet.email(10);
@@ -29,5 +30,18 @@ describe('Creating user account', function () {
       expectedStatusCode,
       `For POST/v2/user we expect status code ${expectedStatusCode}`,
     );
+  });
+  it.only('should delete created user account ', async function () {
+    // Arrange:
+    const expectedStatusCode = 200;
+    // Act:
+    const response = await request.delete(`v2/user/${username}`);
+    // Assert:
+    expect(response.statusCode).to.be.equal(
+      expectedStatusCode,
+      `For DELETE/v2/user we expect status code ${expectedStatusCode}`,
+    );
+    const responseAfterDelete = await request.get(`v2/user/${username}`);
+    expect(responseAfterDelete.statusCode).to.be.equal(404);
   });
 });
