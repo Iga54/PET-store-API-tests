@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2024-06-28T16:41:05.817Z",
-    "end": "2024-06-28T16:41:05.860Z",
-    "duration": 43,
+    "start": "2024-07-01T09:37:59.475Z",
+    "end": "2024-07-01T09:37:59.525Z",
+    "duration": 50,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "67c76301-8732-4919-b453-63b4c89e159b",
+      "uuid": "a537eac6-d1e0-4813-bc19-ec9b5057b66e",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "e9d4488b-a1fd-4b18-81b0-a59e1348a052",
+          "uuid": "6af89c37-576b-4b91-84c7-edc4fa175169",
           "title": "GET/user/login",
           "fullFile": "/Users/iga/Desktop/Projects/PROJECT AUTOMATIC TESTS/API automatic tests/tests/user/login-user.spec.js",
           "file": "/tests/user/login-user.spec.js",
@@ -38,7 +38,7 @@
               "title": "should login a user of store with params",
               "fullTitle": "GET/user/login should login a user of store with params",
               "timedOut": false,
-              "duration": 31,
+              "duration": 34,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,26 +47,26 @@
               "context": null,
               "code": "// Arrange:\nconst expectedStatusCode = 200;\nconst username = userData.username;\nconst password = userData.password;\n// Act:\nconst response = await request.get(\n  `v2/user/login?username=${username}&password=${password}`,\n);\n// Assert:\nexpect(response.statusCode).to.be.equal(\n  expectedStatusCode,\n  `ForGET/user/login we expect status code ${expectedStatusCode}`,\n);",
               "err": {},
-              "uuid": "7d58b145-cf1f-4492-af44-8ed43aed8105",
-              "parentUUID": "e9d4488b-a1fd-4b18-81b0-a59e1348a052",
+              "uuid": "9af12057-aa66-4019-ac10-b5fa1f967df2",
+              "parentUUID": "6af89c37-576b-4b91-84c7-edc4fa175169",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "7d58b145-cf1f-4492-af44-8ed43aed8105"
+            "9af12057-aa66-4019-ac10-b5fa1f967df2"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 31,
+          "duration": 34,
           "root": false,
           "rootEmpty": false,
           "_timeout": 5000
         },
         {
-          "uuid": "bbffac9e-2df2-4171-82a9-119225303a70",
+          "uuid": "70411ae1-4854-4863-bd1a-c250cf849f85",
           "title": "GET/logout",
           "fullFile": "/Users/iga/Desktop/Projects/PROJECT AUTOMATIC TESTS/API automatic tests/tests/user/user-logout.spec.js",
           "file": "/tests/user/user-logout.spec.js",
@@ -77,29 +77,29 @@
               "title": "should log out a user of store",
               "fullTitle": "GET/logout should log out a user of store",
               "timedOut": false,
-              "duration": 6,
+              "duration": 8,
               "state": "passed",
               "speed": "fast",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "// Arrange:\nconst expectedStatusCode = 200;\n// Act:\nconst response = await request.get('v2/user/logout');\n// Assert:\nexpect(response.statusCode).to.be.equal(\n  expectedStatusCode,\n  `ForGET/user/login we expect status code ${expectedStatusCode}`,\n);",
+              "code": "// Arrange:\nconst expectedStatusCode = 200;\n// Act:\nconst response = await request.get('v2/user/logout');\n// Assert:\nexpect(response.statusCode).to.be.equal(\n  expectedStatusCode,\n  `ForGET/user/login we expect status code ${expectedStatusCode}`,\n  expect(response.body.message).to.include(\"ok\")\n);",
               "err": {},
-              "uuid": "ebb2d0a8-d288-48e7-bbfe-7348d42657e3",
-              "parentUUID": "bbffac9e-2df2-4171-82a9-119225303a70",
+              "uuid": "66bfbded-b9da-4dcd-b843-4ed095b7a3b0",
+              "parentUUID": "70411ae1-4854-4863-bd1a-c250cf849f85",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "ebb2d0a8-d288-48e7-bbfe-7348d42657e3"
+            "66bfbded-b9da-4dcd-b843-4ed095b7a3b0"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 6,
+          "duration": 8,
           "root": false,
           "rootEmpty": false,
           "_timeout": 5000

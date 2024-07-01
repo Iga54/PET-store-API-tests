@@ -11,6 +11,7 @@ describe('GET/logout', function () {
     expect(response.statusCode).to.be.equal(
       expectedStatusCode,
       `ForGET/user/login we expect status code ${expectedStatusCode}`,
+      expect(response.body.message).to.include("ok")
     );
   });
 });
