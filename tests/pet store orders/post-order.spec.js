@@ -37,5 +37,7 @@ describe('Placing an order for a pet', function () {
     const responseOrder = await request.get(
       `v2/store/order/${response.body.id}`,
     );
+    expect(responseOrder.body.quantity).to.be.equal(1,
+      `Assertion failed on ${JSON.stringify(response.body)}`)
   });
 });

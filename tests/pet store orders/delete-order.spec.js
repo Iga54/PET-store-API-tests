@@ -34,8 +34,7 @@ describe('Deleting an order for a pet', function () {
     // Act:
     const response = await request.delete(`v2/store/order/${orderId}`);
     // Assert:
-    const responseOrderAfterDelete = await request.get(
-      `v2/store/order/${orderId}`,
+    const responseOrderAfterDelete = await request.get(`v2/store/order/${orderId}`,
     );
     expect(responseOrderAfterDelete.statusCode).to.be.equal(
       404,

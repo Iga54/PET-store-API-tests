@@ -28,7 +28,7 @@ describe('Pet store orders and statuses', function () {
     );
     expect(response.body.id).to.be.equal(
       orderId,
-      `For v2/store/order/${orderId} we get: ${JSON.stringify(response.body)}`,
+      `For GET v2/store/order/${orderId} we get: ${JSON.stringify(response.body)}`,
     );
   });
   it('should contain information about quantity of pets', async function () {
