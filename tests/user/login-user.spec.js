@@ -1,23 +1,20 @@
 const { expect, request } = require('../../config');
-const { petIds } = require('../../test-data/input.data');
+const { petIds, userData } = require('../../test-data/input.data');
 
-describe('GET/login', function () {
-  it('should return status code 200 and more than 7 pets with all statuses', async function () {
+describe('GET/user/login', function () {
+  it.only('should login a user of store with params', async function () {
     // Arrange:
     const expectedStatusCode = 200;
-    const expectedNumberOfPets = 7;
+    const username = userData.username;
+    const password = userData.password;
     // Act:
     const response = await request.get(
-      'v2/pet/findByStatus?status=available&status=pending&status=sold',
+      `v2/user/login?username=${username}&password=${password}`,
     );
     // Assert:
     expect(response.statusCode).to.be.equal(
       expectedStatusCode,
-      `For GET/v2/pet we expect status code ${expectedStatusCode}`,
-    );
-    expect(response.body.length).to.be.greaterThanOrEqual(
-      expectedNumberOfPets,
-      `For GET/v2/pet we expect more than ${expectedStatusCode} pets with all statuses`,
+      `ForGET/user/login we expect status code ${expectedStatusCode}`,
     );
   });
 });
