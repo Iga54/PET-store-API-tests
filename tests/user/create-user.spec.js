@@ -3,7 +3,7 @@ const { request, expect } = require('../../config');
 const { userData } = require('../../test-data/input.data');
 
 describe('Creating user account', function () {
-  it.only('should create user account with input data', async function () {
+  it('should create user account with input data', async function () {
     // Arrange:
     const expectedStatusCode = 200;
     const username = userData.username;
