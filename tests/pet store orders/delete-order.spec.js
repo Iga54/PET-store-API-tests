@@ -3,7 +3,7 @@ const { petIds } = require('../../test-data/input.data');
 
 describe('Deleting an order for a pet', function () {
   let orderId;
-  it('should create a pet order', async function () {
+  it('should create a pet order and return status code 200', async function () {
     // Arrange:
     const expectedStatusCode = 200;
     const petToOrderId = petIds.toGetOrder;
