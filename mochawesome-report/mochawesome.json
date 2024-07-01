@@ -1,14 +1,14 @@
 {
   "stats": {
-    "suites": 1,
-    "tests": 1,
-    "passes": 1,
+    "suites": 2,
+    "tests": 2,
+    "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2024-06-28T15:31:24.479Z",
-    "end": "2024-06-28T15:31:24.521Z",
-    "duration": 42,
-    "testsRegistered": 1,
+    "start": "2024-06-28T16:41:05.817Z",
+    "end": "2024-06-28T16:41:05.860Z",
+    "duration": 43,
+    "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
@@ -18,49 +18,88 @@
   },
   "results": [
     {
-      "uuid": "b792041e-fa04-46cf-8893-772ff180ed19",
+      "uuid": "67c76301-8732-4919-b453-63b4c89e159b",
       "title": "",
-      "fullFile": "/Users/iga/Desktop/Projects/PROJECT AUTOMATIC TESTS/API automatic tests/tests/user/login-user.spec.js",
-      "file": "/tests/user/login-user.spec.js",
+      "fullFile": "",
+      "file": "",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "ac3227f0-6387-4068-bc87-c7f7d6fb7902",
-          "title": "Creating user account",
+          "uuid": "e9d4488b-a1fd-4b18-81b0-a59e1348a052",
+          "title": "GET/user/login",
           "fullFile": "/Users/iga/Desktop/Projects/PROJECT AUTOMATIC TESTS/API automatic tests/tests/user/login-user.spec.js",
           "file": "/tests/user/login-user.spec.js",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "should create user account with input data",
-              "fullTitle": "Creating user account should create user account with input data",
+              "title": "should login a user of store with params",
+              "fullTitle": "GET/user/login should login a user of store with params",
               "timedOut": false,
-              "duration": 36,
+              "duration": 31,
               "state": "passed",
               "speed": "fast",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "// Arrange:\nconst expectedStatusCode = 200;\nconst id = faker.string.uuid(2);\nconst username = faker.lorem.word(4);\nconst firstName = faker.lorem.word(5);\nconst lastName = faker.lorem.word(7);\nconst email = faker.internet.email(10);\nconst password = faker.lorem.paragraph(1);\nconst phone = faker.number.int(9);\n\nconst userData = {\n  username,\n  firstName,\n  lastName,\n  email,\n  password,\n  phone,\n};\n// Act:\nconst response = await request.post('v2/user').send(userData);\n// Assert:\nexpect(response.statusCode).to.be.equal(\n  expectedStatusCode,\n  `For POST/v2/user we expect status code ${expectedStatusCode}`,\n);",
+              "code": "// Arrange:\nconst expectedStatusCode = 200;\nconst username = userData.username;\nconst password = userData.password;\n// Act:\nconst response = await request.get(\n  `v2/user/login?username=${username}&password=${password}`,\n);\n// Assert:\nexpect(response.statusCode).to.be.equal(\n  expectedStatusCode,\n  `ForGET/user/login we expect status code ${expectedStatusCode}`,\n);",
               "err": {},
-              "uuid": "86a599f4-f66f-4114-817b-7cd33f4419c5",
-              "parentUUID": "ac3227f0-6387-4068-bc87-c7f7d6fb7902",
+              "uuid": "7d58b145-cf1f-4492-af44-8ed43aed8105",
+              "parentUUID": "e9d4488b-a1fd-4b18-81b0-a59e1348a052",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "86a599f4-f66f-4114-817b-7cd33f4419c5"
+            "7d58b145-cf1f-4492-af44-8ed43aed8105"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 36,
+          "duration": 31,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 5000
+        },
+        {
+          "uuid": "bbffac9e-2df2-4171-82a9-119225303a70",
+          "title": "GET/logout",
+          "fullFile": "/Users/iga/Desktop/Projects/PROJECT AUTOMATIC TESTS/API automatic tests/tests/user/user-logout.spec.js",
+          "file": "/tests/user/user-logout.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should log out a user of store",
+              "fullTitle": "GET/logout should log out a user of store",
+              "timedOut": false,
+              "duration": 6,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange:\nconst expectedStatusCode = 200;\n// Act:\nconst response = await request.get('v2/user/logout');\n// Assert:\nexpect(response.statusCode).to.be.equal(\n  expectedStatusCode,\n  `ForGET/user/login we expect status code ${expectedStatusCode}`,\n);",
+              "err": {},
+              "uuid": "ebb2d0a8-d288-48e7-bbfe-7348d42657e3",
+              "parentUUID": "bbffac9e-2df2-4171-82a9-119225303a70",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ebb2d0a8-d288-48e7-bbfe-7348d42657e3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6,
           "root": false,
           "rootEmpty": false,
           "_timeout": 5000
