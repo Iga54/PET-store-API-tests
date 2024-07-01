@@ -12,7 +12,7 @@ describe('GET - Get a user data', function () {
     // Assert:
     expect(response.statusCode).to.be.equal(
       expectedStatusCode,
-      `For GET/v2/user we expect status code ${expectedStatusCode}`,
+      `For GET/v2/user/${username} we expect status code ${expectedStatusCode}`,
     );
   });
 });

@@ -10,7 +10,7 @@ describe('GET/logout', function () {
     // Assert:
     expect(response.statusCode).to.be.equal(
       expectedStatusCode,
-      `ForGET/user/login we expect status code ${expectedStatusCode}`,
+      `For GET/user/logout we expect status code ${expectedStatusCode}`,
       expect(response.body.message).to.include("ok")
     );
   });

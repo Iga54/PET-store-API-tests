@@ -39,7 +39,7 @@ describe('Deleting created user account', function () {
     // Assert:
     expect(response.statusCode).to.be.equal(
       expectedStatusCode,
-      `For DELETE/v2/user we expect status code ${expectedStatusCode}`,
+      `For DELETE/v2/user/${username} we expect status code ${expectedStatusCode}`,
     );
     const responseAfterDelete = await request.get(`v2/user/${username}`);
     expect(responseAfterDelete.statusCode).to.be.equal(404);

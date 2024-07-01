@@ -14,7 +14,7 @@ describe('GET/user/login', function () {
     // Assert:
     expect(response.statusCode).to.be.equal(
       expectedStatusCode,
-      `ForGET/user/login we expect status code ${expectedStatusCode}`,
+      `For GET/user/login we expect status code ${expectedStatusCode}`,
     );
   });
 });
