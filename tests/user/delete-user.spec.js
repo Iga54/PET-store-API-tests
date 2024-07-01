@@ -4,7 +4,7 @@ const { userData } = require('../../test-data/input.data');
 
 describe('Deleting created user account', function () {
   let username;
-  it.only('should create user account', async function () {
+  it('should create user account', async function () {
     // Arrange:
     const expectedStatusCode = 200;
     const id = faker.string.uuid(2);
@@ -31,7 +31,7 @@ describe('Deleting created user account', function () {
       `For POST/v2/user we expect status code ${expectedStatusCode}`,
     );
   });
-  it.only('should delete created user account ', async function () {
+  it('should delete created user account ', async function () {
     // Arrange:
     const expectedStatusCode = 200;
     // Act:
