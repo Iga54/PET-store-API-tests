@@ -1,29 +1,41 @@
-# API automatic tests of store with pets 
+# API automatic tests of store with pets
 
-- Given project was established in order to test communication between user and server (requests from user and responses from server) within pet store. User is able to get information about pets, place orders 
+- Given project was established in order to test communication between user and server (requests from user and responses from server) within pet store. As a functionalities, user is able to get information about pets or orders, place orders, delete them, update data about orders and pets from the store. In addition user might create an account, log in, log out and delete an account. Every request from user has its status code and response from server in form of JSON format.
 
-Opis Projektu: Krótki opis mówiący, co projekt robi i jaki problem rozwiązuje. Powinien być wystarczająco informatywny, aby nowy użytkownik mógł zrozumieć cel projektu na pierwszy rzut oka.
 
-Funkcjonalności: Lista głównych funkcjonalności projektu. Co sprawia, że Twój projekt wyróżnia się lub jest użyteczny?
+The project was written using TypeScript. Main frameworks and their versions are described below:
 
-Technologie: Wykaz technologii, bibliotek i frameworków używanych w projekcie. Możesz podać wersje, aby uniknąć problemów z kompatybilnością.
+    mocha: "^10.4.0" - framework which was used to organize tests (describe and it) and define assertion and hooks (before, after, beforeEach, afterEach).
 
-Instalacja: Krok po kroku, jak zainstalować i uruchomić projekt lokalnie. To powinno obejmować instrukcje dotyczące klonowania repozytorium, instalacji zależności oraz uruchomienia aplikacji.
+    chai: "^4.3.4" - library used to assertion (expect). It allows testers to write readable tests.
 
-Przykład Użycia: Przykłady, jak można używać projektu - szczególnie przydatne w przypadku bibliotek, narzędzi czy API. Pokaż przykładowe skrypty lub komendy.
+     supertest: "^7.0.0" - main supertest's functions are: sending HTTP requests (GET, POST, PUT, DELETE etc.) then verifying responses, testing API endpoints and interactions with server which allows testers to write comprehensive end-to-end tests.
 
-Konfiguracja: Jeśli projekt wymaga specjalnej konfiguracji, opisz tutaj wymagane kroki.
+     @faker-js/faker: "^8.4.1" - library which generates fake test data such as user names, emails, phone numbers, dates and more.
 
-Jak Testować Projekt: Informacje, jak uruchomić testy. Jeśli projekt używa specyficznych narzędzi do testowania, warto podać instrukcję, jak je skonfigurować i uruchomić.
+    prettier: "^3.3.2" - useful tool for automatic code formatting and ensuring consistency of code style in a project.
 
-Wkład w Projekt: Wyjaśnienie, jak można przyczynić się do rozwoju projektu. Czy są jakieś zasady dotyczące przesyłania pull requests, stylu kodowania, czy testowania?
+    mochawesome: "^7.1.3" - it is a reporter for framework Mocha which generates complex HTML reports from test results.
 
-Twórcy: Lista osób, które przyczyniły się do projektu, z możliwością podania sposobów kontaktu.
+Project configuration
 
-Licencja: Informacja o licencji, na której udostępniany jest projekt (np. MIT, GPL). Często dodaje się pełny tekst licencji lub link do niej.
+npm install (perspektywa jak ktos sciaga projekt)
 
-Status Projektu: Jeśli projekt jest w fazie intensywnego rozwoju, w fazie utrzymania, lub już nie jest rozwijany, warto o tym wspomnieć.
+uruchomienie dockera
 
-Dodatkowe Zasoby: Linki do dokumentacji, stron projektu, blogów, artykułów czy innych zewnętrznych zasobów, które mogą być pomocne.
+uruchomienie skryptu
 
-Changelog: Opcjonalnie, historię zmian w projekcie, szczególnie przydatne w projektach, które są regularnie aktualizowane.
+
+Instalacja: Krok po kroku, jak zainstalować i uruchomić projekt lokalnie. To powinno obejmować instrukcje dotyczące klonowania repozytorium, instalacji zależności oraz uruchomienia aplikacji. Jak Testować Projekt: Informacje, jak uruchomić testy. Jeśli projekt używa specyficznych narzędzi do testowania, warto podać instrukcję, jak je skonfigurować i uruchomić.
+
+Konfiguracja: Jeśli projekt wymaga specjalnej konfiguracji, opisz tutaj wymagane kroki. DOCKER
+
+Docker
+
+The project was launched using Docker application known as open-source platform which enables creating, introducing and running an app in isolated environments called containers. Thanks to Docker, problems with dependencies and environment conflicts were minimized within the project.
+
+
+Project documentation
+
+Here is the official link of the documentation: https://petstore.swagger.io/#/
+
