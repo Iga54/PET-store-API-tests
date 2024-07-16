@@ -7,7 +7,7 @@ describe('Pet store orders and statuses', function () {
     // Arrange:
     const expectedStatusCode = 200;
     // Act:
-    const response = await request.get('v2/store/inventory');
+    const response = await request.get('store/inventory');
     // Assert:
     expect(response.statusCode).to.be.equal(
       expectedStatusCode,
@@ -15,12 +15,13 @@ describe('Pet store orders and statuses', function () {
     );
     expect(response.body).to.have.property('available');
   });
+
   it('should return an order with given id', async function () {
     // Arrange:
     const expectedStatusCode = 200;
     orderId = petIds.toGetOrder;
     // Act:
-    const response = await request.get(`v2/store/order/${orderId}`);
+    const response = await request.get(`store/order/${orderId}`);
     // Assert:
     expect(response.statusCode).to.be.equal(
       expectedStatusCode,
@@ -28,14 +29,15 @@ describe('Pet store orders and statuses', function () {
     );
     expect(response.body.id).to.be.equal(
       orderId,
-      `For GET v2/store/order/${orderId} we get: ${JSON.stringify(response.body)}`,
+      `For GET store/order/${orderId} we get: ${JSON.stringify(response.body)}`,
     );
   });
+  
   it('should contain information about quantity of pets', async function () {
     //Arrange:
     const expectedPetQuantity = 2;
     // Act:
-    const response = await request.get(`v2/store/order/${orderId}`);
+    const response = await request.get(`store/order/${orderId}`);
     // Assert:
     expect(response.body.quantity).to.be.greaterThanOrEqual(expectedPetQuantity
       ,

@@ -15,26 +15,27 @@ describe('Deleting an order for a pet', function () {
       complete: true,
     };
     // Act:
-    const response = await request.post('v2/store/order').send(payload);
+    const response = await request.post('store/order').send(payload);
     // Assert:
     expect(response.statusCode).to.be.equal(
       expectedStatusCode,
-      `For POST/v2/store/order we expect status code ${expectedStatusCode}`,
+      `For POST store/order we expect status code ${expectedStatusCode}`,
     );
     orderId = response.body.id;
-    const responseOrder = await request.get(`v2/store/order/${orderId}`);
+    const responseOrder = await request.get(`store/order/${orderId}`);
     expect(responseOrder.body.status).to.be.equal(
       'placed',
-      `For POST/v2/store/order we get: ${JSON.stringify(response.body)}`,
+      `For POST store/order we get: ${JSON.stringify(response.body)}`,
     );
   });
+  
   it('should delete a pet order', async function () {
     // Arrange:
     const expectedStatusCode = 200;
     // Act:
-    const response = await request.delete(`v2/store/order/${orderId}`);
+    const response = await request.delete(`store/order/${orderId}`);
     // Assert:
-    const responseOrderAfterDelete = await request.get(`v2/store/order/${orderId}`,
+    const responseOrderAfterDelete = await request.get(`store/order/${orderId}`,
     );
     expect(responseOrderAfterDelete.statusCode).to.be.equal(
       404,
