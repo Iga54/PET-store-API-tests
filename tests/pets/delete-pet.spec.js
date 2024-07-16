@@ -27,7 +27,7 @@ describe('Deleting created pet', function () {
       status: 'available',
     };
     // Act:
-    const response = await request.post('v2/pet').send(payload);
+    const response = await request.post('pet').send(payload);
     petToDelete = response.body.id;
     // Assert:
     expect(response.statusCode).to.be.equal(
@@ -40,13 +40,13 @@ describe('Deleting created pet', function () {
     // Arrange:
     const expectedStatusCode = 200;
     // Act:
-    const response = await request.delete(`v2/pet/${petToDelete}`);
+    const response = await request.delete(`pet/${petToDelete}`);
     // Assert:
     expect(response.statusCode).to.be.equal(
       expectedStatusCode,
       `Assertion failed on ${JSON.stringify(response.body)}`,
     );
-    const responseAfterDelete = await request.get(`v2/pet/${petToDelete}`);
+    const responseAfterDelete = await request.get(`pet/${petToDelete}`);
 
     expect(responseAfterDelete.statusCode).to.be.equal(
       404,

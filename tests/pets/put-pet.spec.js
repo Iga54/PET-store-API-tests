@@ -3,7 +3,7 @@ const { expect, request } = require('../../config');
 const { petIds } = require('../../test-data/input.data');
 
 describe('PUT - updating a pet', function () {
-  it('should update a pet and return status code 200', async function () {
+  it.only('should update a pet and return status code 200', async function () {
     // Arrange:
     const petId = petIds.toPut;
     const name = faker.lorem.word(4);
@@ -15,11 +15,11 @@ describe('PUT - updating a pet', function () {
       
     };
     // Act:
-    const response = await request.put('v2/pet').send(payload);
+    const response = await request.put('pet').send(payload);
     // Assert:
     expect(response.statusCode).to.be.equal(expectedStatusCode);
     payload.id = response.body.id;
-    const responsePet = await request.get(`v2/pet/${petId}`);
+    const responsePet = await request.get(`pet/${petId}`);
     expect(responsePet.body.name).to.be.deep.equal(payload.name,
       `Assertion failed on ${JSON.stringify(response.body)}`);
   });

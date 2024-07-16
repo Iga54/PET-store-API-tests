@@ -26,13 +26,13 @@ describe('Adding a new pet to the store', function () {
       status: 'available',
     };
     // Act:
-    const response = await request.post('v2/pet').send(payload);
+    const response = await request.post('pet').send(payload);
     // Assert:
     expect(response.statusCode).to.be.equal(
       expectedStatusCode,
       `Assertion failed on ${JSON.stringify(response.body)}`,
     );
-    const responsePet = await request.get(`v2/pet/${response.body.id}`);
+    const responsePet = await request.get(`pet/${response.body.id}`);
     payload.id = response.body.id;
     expect(responsePet.body).to.be.deep.equal(
       payload,
