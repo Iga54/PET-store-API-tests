@@ -11,11 +11,10 @@ Given project was established in order to test communication between user and se
 ## Project configuration
 
 1. The first step is to run a command "npm install" in console
-2. Docker should be run
-3. The next issue is creating scripts for switching on server and running tests in package.json file
+2. Docker should be enabled on computer
+3. The next issue is running scripts mentioned below:
 - to turn on server "npm run startServer"
 - to run all tests "npm run testAll"
-4. After turning on Docker it is necessary to run command "npm run startServer" in console
 
 ## Frameworks used in the project
 
