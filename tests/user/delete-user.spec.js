@@ -24,24 +24,25 @@ describe('Deleting created user account', function () {
       phone,
     };
     // Act:
-    const response = await request.post('v2/user').send(userInput);
+    const response = await request.post('user').send(userInput);
     // Assert:
     expect(response.statusCode).to.be.equal(
       expectedStatusCode,
-      `For POST/v2/user we expect status code ${expectedStatusCode}`,
+      `For POST user we expect status code ${expectedStatusCode}`,
     );
   });
+
   it('should delete created user account ', async function () {
     // Arrange:
     const expectedStatusCode = 200;
     // Act:
-    const response = await request.delete(`v2/user/${username}`);
+    const response = await request.delete(`user/${username}`);
     // Assert:
     expect(response.statusCode).to.be.equal(
       expectedStatusCode,
-      `For DELETE/v2/user/${username} we expect status code ${expectedStatusCode}`,
+      `For DELETE user/${username} we expect status code ${expectedStatusCode}`,
     );
-    const responseAfterDelete = await request.get(`v2/user/${username}`);
+    const responseAfterDelete = await request.get(`user/${username}`);
     expect(responseAfterDelete.statusCode).to.be.equal(404);
   });
 });

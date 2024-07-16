@@ -22,11 +22,11 @@ describe('Creating user account', function () {
       phone,
     };
     // Act:
-    const response = await request.post('v2/user').send(userInput);
+    const response = await request.post('user').send(userInput);
     // Assert:
     expect(response.statusCode).to.be.equal(
       expectedStatusCode,
-      `For POST/v2/user we expect status code ${expectedStatusCode}`,
+      `For POST user we expect status code ${expectedStatusCode}`,
     );
   });
 });

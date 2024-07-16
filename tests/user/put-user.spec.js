@@ -23,11 +23,11 @@ describe('PUT - updating a user ', function () {
       phone,
     };
     // Act:
-    const response = await request.put(`v2/user/${username}`).send(userInput);
+    const response = await request.put(`user/${username}`).send(userInput);
     // Assert:
     expect(response.statusCode).to.be.equal(
       expectedStatusCode,
-      `For PUT/v2/user we expect status code ${expectedStatusCode}`,
+      `For PUT user we expect status code ${expectedStatusCode}`,
     );
     // await new Promise((resolve) => setTimeout(resolve, 1000));
 

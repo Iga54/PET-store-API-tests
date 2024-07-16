@@ -6,11 +6,11 @@ describe('GET/logout', function () {
     // Arrange:
     const expectedStatusCode = 200;
     // Act:
-    const response = await request.get('v2/user/logout');
+    const response = await request.get('user/logout');
     // Assert:
     expect(response.statusCode).to.be.equal(
       expectedStatusCode,
-      `For GET/user/logout we expect status code ${expectedStatusCode}`,
+      `For GET user/logout we expect status code ${expectedStatusCode}`,
       expect(response.body.message).to.include("ok")
     );
   });

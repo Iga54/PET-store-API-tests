@@ -9,12 +9,12 @@ describe('GET/user/login', function () {
     const password = userData.password;
     // Act:
     const response = await request.get(
-      `v2/user/login?username=${username}&password=${password}`,
+      `user/login?username=${username}&password=${password}`,
     );
     // Assert:
     expect(response.statusCode).to.be.equal(
       expectedStatusCode,
-      `For GET/user/login we expect status code ${expectedStatusCode}`,
+      `For GET user/login we expect status code ${expectedStatusCode}`,
     );
   });
 });
