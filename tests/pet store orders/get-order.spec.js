@@ -13,7 +13,7 @@ describe('Pet store orders and statuses', function () {
       expectedStatusCode,
       `Assertion failed on ${JSON.stringify(response.body)}`,
     );
-    expect(response.body).to.have.property('available');
+    expect(response.body).to.have.property('approved');
   });
 
   it('should return an order with given id', async function () {

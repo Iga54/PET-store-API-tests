@@ -3,7 +3,7 @@ const { expect, request } = require('../../config');
 const { petIds } = require('../../test-data/input.data');
 
 describe('PUT - updating a pet', function () {
-  it.only('should update a pet and return status code 200', async function () {
+  it('should update a pet and return status code 200', async function () {
     // Arrange:
     const petId = petIds.toPut;
     const name = faker.lorem.word(4);
