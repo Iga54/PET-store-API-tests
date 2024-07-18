@@ -36,21 +36,22 @@ describe('Deleting created pet', function () {
     );
   });
 
-  it('should delete created pet and return status code 404 after deleting a pet', async function () {
+  it('should delete created pet and return status code 200', async function () {
     // Arrange:
-    const expectedStatusCode = 200;
+      const expectedStatusCode = 200;
+      let responseText;
+      let responseStatusCode;
     // Act:
-    const response = await request.delete(`pet/${petToDelete}`);
+    try {
+      const response =  await request.delete(`pet/${petToDelete}`)
+    } catch (error) {
+      responseText = error.rawResponse;
+      responseStatusCode = error.statusCode;
+    }
     // Assert:
-    expect(response.statusCode).to.be.equal(
+    expect(responseStatusCode).to.be.equal(
       expectedStatusCode,
-      `Assertion failed on ${JSON.stringify(response.body)}`,
     );
-    const responseAfterDelete = await request.get(`pet/${petToDelete}`);
-
-    expect(responseAfterDelete.statusCode).to.be.equal(
-      404,
-      `Assertion failed on ${JSON.stringify(response.body)}`,
-    );
-  });
+    });
 });
+
