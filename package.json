@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "startServer": "docker run -d -e SWAGGER_HOST=http://0.0.0.0 -e SWAGGER_URL=http://0.0.0.0 -e SWAGGER_BASE_PATH=/v2 -p 80:8080 swaggerapi/petstore",
+    "startServer": "docker run -d -e SWAGGER_HOST=http://0.0.0.0:8080 -e SWAGGER_URL=http://0.0.0.0:8080 -e SWAGGER_BASE_PATH=/v3 -p 8080:8080 swaggerapi/petstore",
     "test": "echo \"Error: no test specified\" && exit 1",
     "testAll": "mocha './tests/**/*.spec.js'"
   },
