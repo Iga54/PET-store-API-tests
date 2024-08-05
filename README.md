@@ -14,7 +14,7 @@ Given project was established in order to test communication between user and se
 
 ## Frameworks used in the project
 
-The project was written using TypeScript. Main frameworks and their versions are described below:
+The project was written using JavaScript. Main frameworks and their versions are described below:
 
 - mocha ^10.4.0 - framework which was used to organize tests (describe and it) and define assertion and hooks (before, after, beforeEach, afterEach).
 
