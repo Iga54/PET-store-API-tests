@@ -16,17 +16,17 @@ Given project was established in order to test communication between user and se
 
 The project was written using JavaScript. Main frameworks and their versions are described below:
 
-- mocha ^10.4.0 - framework which was used to organize tests (describe and it) and define assertion and hooks (before, after, beforeEach, afterEach).
+- mocha - framework which was used to organize tests (describe and it) and define assertion and hooks (before, after, beforeEach, afterEach).
 
-- chai ^4.3.4 - library used to assertion (expect). It allows testers to write readable tests.
+- chai - library used to assertion (expect). It allows testers to write readable tests.
 
-- supertest ^7.0.0 - main supertest's functions are: sending HTTP requests (GET, POST, PUT, DELETE etc.) then verifying responses, testing API endpoints and interactions with server which allows testers to write comprehensive end-to-end tests.
+- supertest - main supertest's functions are: sending HTTP requests (GET, POST, PUT, DELETE etc.) then verifying responses, testing API endpoints and interactions with server which allows testers to write comprehensive end-to-end tests.
 
-- @faker-js/faker ^8.4.1  - library which generates fake test data such as user names, emails, phone numbers, dates and more.
+- @faker-js/faker  - library which generates fake test data such as user names, emails, phone numbers, dates and more.
 
-- prettier ^3.3.2 - useful tool for automatic code formatting and ensuring consistency of code style in a project.
+- prettier - useful tool for automatic code formatting and ensuring consistency of code style in a project.
 
--  mochawesome ^7.1.3 - it is a reporter for framework Mocha which generates complex HTML reports from test results.
+-  mochawesome - it is a reporter for framework Mocha which generates complex HTML reports from test results.
 
 
 ## Docker
