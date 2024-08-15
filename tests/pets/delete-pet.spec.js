@@ -38,20 +38,13 @@ describe('Deleting created pet', function () {
 
   it('should delete created pet and return status code 200', async function () {
     // Arrange:
-      const expectedStatusCode = 200;
-      let responseText;
-      let responseStatusCode;
-    // Act:
-    try {
-      const response =  await request.delete(`pet/${petToDelete}`)
-    } catch (error) {
-      responseText = error.rawResponse;
-      responseStatusCode = error.statusCode;
-    }
-    // Assert:
-    expect(responseStatusCode).to.be.equal(
-      expectedStatusCode,
-    );
-    });
-});
+    const expectedStatusCode = 200;
 
+    // Act:
+
+    const response = await request.delete(`pet/${petToDelete}`);
+
+    // Assert:
+    expect(response.statusCode).to.be.equal(expectedStatusCode);
+  });
+});

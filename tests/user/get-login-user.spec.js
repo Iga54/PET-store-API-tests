@@ -8,21 +8,15 @@ describe('GET user/login', function () {
     const username = userData.username;
     const password = userData.password;
     // Act:
-    let responseText;
-    let responseStatusCode;
 
-    try {
       const response = await request.get(
         `user/login?username=${username}&password=${password}`,
       );
-    } catch (error) {
-      responseText = error.rawResponse;
-      responseStatusCode = error.statusCode;
-    }
+   
 
     // Assert:
-    expect(responseText).to.include('Logged in');
-    expect(responseStatusCode).to.be.equal(
+    expect(response.body.message).to.include('logged in');
+    expect(response.statusCode).to.be.equal(
       expectedStatusCode,
       `For GET user/login we expect status code ${expectedStatusCode}`,
     );

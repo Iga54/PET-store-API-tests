@@ -6,17 +6,11 @@ describe('GET logout', function () {
     // Arrange:
     const expectedStatusCode = 200;
     // Act:
-    let responseText;
-    let responseStatusCode;
-    try {
-      const response = await request.get('user/logout')
-    } catch (error) {
-      responseText = error.rawResponse;
-      responseStatusCode = error.statusCode;
-    }
+
+    const response = await request.get('user/logout');
 
     // Assert:
-    expect(responseStatusCode).to.be.equal(
+    expect(response.statusCode).to.be.equal(
       expectedStatusCode,
       `For GET user/logout we expect status code ${expectedStatusCode}`,
     );
